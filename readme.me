@@ -1,0 +1,31 @@
+Installing the Dependency:
+go get -u github.com/gin-gonic/gin
+
+
+To build Go application:
+
+go build -o app
+
+To run The App:
+
+./app
+
+Retrieving the List of Articles in JSON Format
+
+To see our latest updates in action, build and run your application. Then execute the following command:
+
+curl -X GET -H "Accept: application/json" http://localhost:8080/
+This should return a response as follows:
+
+[{"id":1,"title":"Article 1","content":"Article 1 body"},{"id":2,"title":"Article 2","content":"Article 2 body"}]
+As you can see, our request got a response in the JSON format because we set the Acceptheader to application/json.
+
+Retrieving an Article in XML Format
+
+Let's now get our application to respond with the details of a particular article in the XML format. To do this, first start your application as mentioned above. Now execute the following command:
+
+curl -X GET -H "Accept: application/xml" http://localhost:8080/article/view/1
+This should return a response as follows:
+
+<article><ID>1</ID><Title>Article 1</Title><Content>Article 1 body</Content></article>
+As you can see, our request got a response in the XML format because we set the Acceptheader to application/xml.
